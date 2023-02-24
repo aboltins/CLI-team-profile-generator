@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/aboltins/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/aboltins/team-profile-generator#readme"
+  "homepage": "https://github.com/aboltins/team-profile-generator#readme",
+  "dependencies": {
+    "jest": "^29.4.3"
+  }
 }
