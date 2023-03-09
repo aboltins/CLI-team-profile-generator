@@ -120,6 +120,15 @@ const promptForIntern = () => {
     })
 }
 
-const buildPage = () => {
-    // fs write file
-}
+// build page function
+
+const buildPage = (employees) => {
+    const html = render(employees);
+    fs.writeFile(outputPath, html, (err) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      console.log("Team page created successfully!");
+    });
+  };
