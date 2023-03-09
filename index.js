@@ -10,27 +10,51 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-inquirer.prompt([{
+inquirer.prompt([
     //managerquestions
-}]).then(response => {
+    {
+        type: 'input',
+        message: "What is the team manager's name?",
+        name: 'name',
+    },
+    {
+        type: 'input',
+        message: "What is the team manager's id?",
+        name: 'id',
+    },
+    {
+        type: 'input',
+        message: "What is the team manager's email?",
+        name: 'email',
+    },
+    {
+        type: 'input',
+        message: "What is the team manager's office number?",
+        name: 'officeNumber',
+    },
+
+]).then(response => {
     // populate manager info
-    // promptForNexEMployee ()
+    promptForNextEmployee();
 })
 
 const promptForNextEmployee = () => {
     inquirer.prompt([{
-        // choice of 3
-    }]).then(response => {
-        // if engineer
-        //    promptForEngineer
-        // else if intern
-        //    promptForIntern
-        // else
-        //    use the functionality from page-template to generate the team
-    })
+        type: "list",
+        message: "Which type of team member would you like to add? ( Use arrow keys)",
+        name: "license",
+        choices: ["Engineer", "Intern", "I don't want to add any more team members."]
+    }])
+    // .then(response => {
+    //     // if engineer
+    //     //    promptForEngineer
+    //     // else if intern
+    //     //    promptForIntern
+    //     // else
+    //     //    use the functionality from page-template to generate the team
+    // })
 }
 
 const promptForEngineer = () => {
@@ -52,5 +76,5 @@ const promptForIntern = () => {
 }
 
 const buildPage = () => {
-// fs write file
+    // fs write file
 }
