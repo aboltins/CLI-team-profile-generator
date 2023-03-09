@@ -22,5 +22,8 @@
   "homepage": "https://github.com/aboltins/team-profile-generator#readme",
   "devDependencies": {
     "jest": "^29.5.0"
+  },
+  "dependencies": {
+    "inquirer": "^6.5.0"
   }
 }
