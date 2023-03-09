@@ -44,18 +44,19 @@ const promptForNextEmployee = () => {
     inquirer.prompt([{
         type: "list",
         message: "Which type of team member would you like to add? ( Use arrow keys)",
-        name: "license",
+        name: "team",
         choices: ["Engineer", "Intern", "I don't want to add any more team members."]
     }])
-    // .then(response => {
-    //     // if engineer
-    //     //    promptForEngineer
-    //     // else if intern
-    //     //    promptForIntern
-    //     // else
-    //     //    use the functionality from page-template to generate the team
-    // })
-}
+        .then(response => {
+            if (response.team === "Engineer") {
+                promptForEngineer();
+            } else if (response.team === "Intern") {
+                promptForIntern();
+                // else
+                //    use the functionality from page-template to generate the team
+            }
+        });
+};
 
 const promptForEngineer = () => {
     inquirer.prompt([
@@ -63,28 +64,29 @@ const promptForEngineer = () => {
         {
             type: 'input',
             message: "What is your engineer's name?",
-            name: 'name',
+            name: 'managerName',
         },
         {
             type: 'input',
             message: "What is your engineer's id?",
-            name: 'id',
+            name: 'managerId',
         },
         {
             type: 'input',
             message: "What is your engineer's email?",
-            name: 'email',
+            name: 'managerEmail',
         },
         {
             type: 'input',
             message: "What is your engineer's Github username?",
-            name: 'github',
+            name: 'managerGithub',
         },
-        {
-        }]).then(response => {
-            // add new engineer to employees array
-            promptForNextEmployee();
-        })
+    ]).then(response => {
+        // add new engineer to employees array
+        const newEngineer = new Engineer(response.managerName, response.managerId, response.managerEmail, response.managerGithub);
+        console.log(newEngineer);
+        promptForNextEmployee();
+    })
 }
 
 const promptForIntern = () => {
@@ -93,26 +95,28 @@ const promptForIntern = () => {
         {
             type: 'input',
             message: "What is your intern's name?",
-            name: 'name',
+            name: 'internName',
         },
         {
             type: 'input',
             message: "What is your intern's id?",
-            name: 'id',
+            name: 'internId',
         },
         {
             type: 'input',
             message: "What is your intern's email?",
-            name: 'email',
+            name: 'internEmail',
         },
         {
             type: 'input',
             message: "What is your intern's school?",
-            name: 'school',
+            name: 'internSchool',
         },
     ]).then(response => {
         // add new intern to employees array
-        // promptForNextEmployee
+        const newIntern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
+        console.log(newIntern);
+        promptForNextEmployee();
     })
 }
 
