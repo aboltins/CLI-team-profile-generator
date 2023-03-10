@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-// Gather information about the development team members, and render the HTML file.
+// Gathers information about the development team members, and renders the HTML file.
 
 // employees array that will store the responses.
 let employees = [];
@@ -94,7 +94,6 @@ const promptForEngineer = () => {
     ]).then(response => {
         // add new engineer to employees array
         const newEngineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub);
-        console.log(newEngineer);
         //push engineer info to employees array.
         employees.push(newEngineer);
         //prompt for next employee choice.
