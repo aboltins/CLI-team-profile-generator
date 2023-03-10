@@ -10,7 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-// TODO: Write Code to gather information about the development team members, and render the HTML file.
+// Gather information about the development team members, and render the HTML file.
 
 // employees array that will store the responses.
 let employees = [];
@@ -20,17 +20,17 @@ inquirer.prompt([
     {
         type: 'input',
         message: "What is the team manager's name?",
-        name: 'name',
+        name: 'managerName',
     },
     {
         type: 'input',
         message: "What is the team manager's id?",
-        name: 'id',
+        name: 'managerId',
     },
     {
         type: 'input',
         message: "What is the team manager's email?",
-        name: 'email',
+        name: 'managerEmail',
     },
     {
         type: 'input',
@@ -41,10 +41,13 @@ inquirer.prompt([
 ]).then(response => {
     // populate manager info
     const newManager = new Manager(response.managerName, response.managerId, response.managerEmail, response.officeNumber);
+    // push manager info to the employees array.
     employees.push(newManager);
+    //prompt for next employee choice.
     promptForNextEmployee();
 })
 
+//  Next employee prompt
 const promptForNextEmployee = () => {
     inquirer.prompt([{
         type: "list",
@@ -64,6 +67,7 @@ const promptForNextEmployee = () => {
         });
 };
 
+// Engineer prompt
 const promptForEngineer = () => {
     inquirer.prompt([
         //engineer questions
@@ -91,11 +95,14 @@ const promptForEngineer = () => {
         // add new engineer to employees array
         const newEngineer = new Engineer(response.engineerName, response.engineerId, response.engineerEmail, response.engineerGithub);
         console.log(newEngineer);
+        //push engineer info to employees array.
         employees.push(newEngineer);
+        //prompt for next employee choice.
         promptForNextEmployee();
     })
 }
 
+// Intern prompt
 const promptForIntern = () => {
     inquirer.prompt([
         //intern questions
@@ -122,7 +129,9 @@ const promptForIntern = () => {
     ]).then(response => {
         // add new intern to employees array
         const newIntern = new Intern(response.internName, response.internId, response.internEmail, response.internSchool);
+        //push intern info to employees array.
         employees.push(newIntern);
+        //prompt for next employee choice.
         promptForNextEmployee();
     })
 }
