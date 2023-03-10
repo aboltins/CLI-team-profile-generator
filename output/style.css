@@ -1,0 +1,27 @@
+body {
+  background-color: #F8F8F8;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #333333;
+}
+
+.container {
+  max-width: 960px;
+  margin-top: 32px;
+}
+
+.card-header {
+  background-color: #395fc7;
+  color: #FFFFFF;
+}
+
+.card-body {
+  background-color: #f0eeee;
+  border: 1px solid #CCCCCC;
+}
+
+.team-heading {
+  background-color: #d74f4f;
+  color: #FFFFFF;
+  margin-bottom: 30px;
+}
+
