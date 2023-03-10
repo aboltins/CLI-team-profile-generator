@@ -66,11 +66,10 @@ Fork and pull request.
 
 ![1](./images/team-gen-ss-1.png)
 ![2](./images/team-gen-ss-2.png)
-![3](./images/team-gen-ss-3.png)
 
 ## Demo-Video.
 
-[Demo-Video hosted on Google drive.](https://drive.google.com/file/d/1yOEqira-vRnQ4Xp_OJTH3HBofydJNu_F/view)
+[Demo-Video hosted on Google drive.](https://drive.google.com/file/d/1bZmMRHsBmt1oOqGoVTbtuA-mEh6lXxRj/view)
 
 ## Questions
 
