@@ -64,13 +64,13 @@ Fork and pull request.
 
 ## Screenshots
 
-![1](./images/readme-gen-ss1.png)
-![2](./images/readme-gen-ss2.png)
-![3](./images/readme-gen-ss3.png)
+![1](./images/team-gen-ss-1.png)
+![2](./images/team-gen-ss-2.png)
+![3](./images/team-gen-ss-3.png)
 
 ## Demo-Video.
 
-[Demo-Video hosted on Google drive.](https://drive.google.com/file/d/1jRhwYWsV0Gp7ZrgZRFcBDYRm8FlowNEl/view)
+[Demo-Video hosted on Google drive.](https://drive.google.com/file/d/1yOEqira-vRnQ4Xp_OJTH3HBofydJNu_F/view)
 
 ## Questions
 
